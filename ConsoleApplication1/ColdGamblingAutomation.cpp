@@ -129,15 +129,16 @@ int main()
 }
 
 void PressKey(INPUT in) {
+    // Keyboard Setup
     in.type = INPUT_KEYBOARD;
     in.ki.wScan = 0;
     in.ki.dwExtraInfo = 0;
     
     // keypress event
     in.ki.dwFlags = 0;
-    
     SendInput(1, &in, sizeof(INPUT));
 
+    // Key up event
     in.ki.dwFlags = KEYEVENTF_KEYUP;
     SendInput(1, &in, sizeof(INPUT));
 
