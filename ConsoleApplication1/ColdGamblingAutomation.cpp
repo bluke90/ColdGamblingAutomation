@@ -21,10 +21,10 @@ int main()
     bool donatorCmd;
 
     // Console Header
-    std::cout << "===============Cold Gambling Bot Automation===================";
+    std::cout << "===============Cold Gambling Bot Automation===================\n";
     std::cout << "= Copyright 2023\n";
-    std::cout << "= Author: Blake Ganzerla\n = Company: Proton Technologies LLC \n";
-    std::cout << "======================================================\n\n\n\n\n";
+    std::cout << "= Author: Blake Ganzerla\n= Company: Proton Technologies LLC \n";
+    std::cout << "==============================================================\n\n\n";
     
     // Donator Command
     std::cout << "Enable ' donator ' Command? (Y = yes|N = no):";
@@ -141,7 +141,7 @@ int main()
         input.ki.wVk = VK_RETURN;
         PressKey(input);
 
-        Sleep(2000);
+        Sleep(3000);
 
         // /vote
         std::cout << "Simulating Vote command\n";
@@ -167,7 +167,7 @@ int main()
         input.ki.wVk = VK_RETURN;
         PressKey(input);
 
-        Sleep(2000);
+        Sleep(3000);
         count++;
         std::cout << "\nCommand set has been simulated  " << count << "  times\n\n";
 
