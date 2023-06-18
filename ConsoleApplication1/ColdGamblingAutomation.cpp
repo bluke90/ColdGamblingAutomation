@@ -18,10 +18,31 @@ int main()
 {
     // declare vars
     int count = 0;
+    bool donatorCmd;
+
+    // Console Header
+    std::cout << "===============Cold Gambling Bot Automation===================";
+    std::cout << "= Copyright 2023\n";
+    std::cout << "= Author: Blake Ganzerla\n = Company: Proton Technologies LLC \n";
+    std::cout << "======================================================\n\n\n\n\n";
+    
+    // Donator Command
+    std::cout << "Enable ' donator ' Command? (Y = yes|N = no):";
+    std::string choice;
+    std::cin >> choice;
+
+    if (choice == "Y") {
+        donatorCmd = true;
+    } else {
+        donatorCmd = false;
+    }
+    Sleep(500);
 
     // wait for enter key event
     std::cout << "Press any key to start...\n";
     std::cin.get();
+    std::cin.get();
+
 
     // display start msg and sleep 5 sec
     std::cout << "Waiting 5 seconds to activate discord process\n";
@@ -31,41 +52,42 @@ int main()
         INPUT input;
 
         // /donator
-        std::cout << "Simulating Donator command\n";
-        input.ki.wVk = VK_DIVIDE;
-        PressKey(input);
+        if (donatorCmd) {
+            std::cout << "Simulating Donator command\n";
+            input.ki.wVk = VK_DIVIDE;
+            PressKey(input);
 
-        input.ki.wVk = 0x44;
-        PressKey(input);
+            input.ki.wVk = 0x44;
+            PressKey(input);
 
-        input.ki.wVk = 0x4F;
-        PressKey(input);
+            input.ki.wVk = 0x4F;
+            PressKey(input);
 
-        input.ki.wVk = 0x4E;
-        PressKey(input);
+            input.ki.wVk = 0x4E;
+            PressKey(input);
 
-        input.ki.wVk = 0x41;
-        PressKey(input);
+            input.ki.wVk = 0x41;
+            PressKey(input);
 
-        input.ki.wVk = 0x54;
-        PressKey(input);
+            input.ki.wVk = 0x54;
+            PressKey(input);
 
-        input.ki.wVk = 0x4F;
-        PressKey(input);
+            input.ki.wVk = 0x4F;
+            PressKey(input);
 
-        input.ki.wVk = 0x52;
-        PressKey(input);
+            input.ki.wVk = 0x52;
+            PressKey(input);
 
-        Sleep(1000);
+            Sleep(1000);
 
-        input.ki.wVk = VK_RETURN;
-        PressKey(input);
+            input.ki.wVk = VK_RETURN;
+            PressKey(input);
 
-        input.ki.wVk = VK_RETURN;
-        PressKey(input);
-        
-        Sleep(3000);
+            input.ki.wVk = VK_RETURN;
+            PressKey(input);
 
+            Sleep(3000);
+        }
 
         // /fish
         std::cout << "Simulating Fish Command\n";
@@ -93,6 +115,33 @@ int main()
         PressKey(input);
 
         Sleep(3000);
+
+        // /mine
+        std::cout << "Simulating Mine command\n";
+        input.ki.wVk = VK_DIVIDE;
+        PressKey(input);
+
+        input.ki.wVk = 0x4D;
+        PressKey(input);
+
+        input.ki.wVk = 0x49;
+        PressKey(input);
+
+        input.ki.wVk = 0x4E;
+        PressKey(input);
+
+        input.ki.wVk = 0x45;
+        PressKey(input);
+
+        Sleep(1000);
+
+        input.ki.wVk = VK_RETURN;
+        PressKey(input);
+
+        input.ki.wVk = VK_RETURN;
+        PressKey(input);
+
+        Sleep(2000);
 
         // /vote
         std::cout << "Simulating Vote command\n";
