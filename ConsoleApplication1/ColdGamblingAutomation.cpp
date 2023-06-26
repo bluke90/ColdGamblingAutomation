@@ -7,9 +7,12 @@
 * Copyright License - GNU General Public License (GNU GPL)
 */
 
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <iostream>
 #include <Windows.h>
+#include <ctime>
+#define Size 50
 
 void PressKey(INPUT input);
 
@@ -19,6 +22,7 @@ int main()
     // declare vars
     int count = 0;
     bool donatorCmd;
+    time_t now;
 
     // Console Header
     std::cout << "===============Cold Gambling Bot Automation===================\n";
@@ -62,7 +66,7 @@ int main()
 
             input.ki.wVk = 0x4F;
             PressKey(input);
-
+             
             input.ki.wVk = 0x4E;
             PressKey(input);
 
@@ -169,7 +173,19 @@ int main()
 
         Sleep(3000);
         count++;
-        std::cout << "\nCommand set has been simulated  " << count << "  times\n\n";
+       
+
+        // Get current time
+        now = time(0);
+        struct tm* tmp;
+        char TIME_STR[Size];
+        time(&now);
+
+        tmp = localtime(&now);
+
+        strftime(TIME_STR, sizeof(TIME_STR), "%I:%M%p", tmp);
+
+        std::cout << "\nCommand set has been simulated  " << count << "  times, completed at - " << TIME_STR << "\n\n";
 
         Sleep(301000);
         
